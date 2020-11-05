@@ -1,0 +1,124 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SelectAccountOnPage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Account" Type="InArgument(x:String)" />
+    <x:Property Name="out_SelectionText" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>576,612</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SelectAccountOnPage_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SelectAccountOnPage" sap:VirtualizedContainerService.HintSize="401,507" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="359,95" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[Now.ToString(&quot;yyyy-MM-dd hh:mm:ss&quot;) + &quot; ====&gt;&gt; Select account &quot; + in_Account + &quot;... &quot;]" />
+    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  accSelect'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[&quot;*&quot; + in_Account + &quot;*&quot;]">
+      <ui:SelectItem.Items>
+        <scg:List x:TypeArguments="x:String" Capacity="32">
+          <x:String>请选择账号</x:String>
+          <x:String>110899991010003027323|凯德商用房产管理咨询（上海）有限公司|CNY</x:String>
+          <x:String>110060777018800018985 |北京腾飞博大房地产开发有限公司 |CNY</x:String>
+          <x:String>110060929018800040243 |北京嘉德新源置业有限公司 |CNY</x:String>
+          <x:String>110060929018800040568 |凯德商用置业咨询（北京）有限公司 |CNY</x:String>
+          <x:String>310066580018170327311 |上海星外滩开发建设有限公司 |CNY</x:String>
+          <x:String>310066771018170222808 |上海星外滩开发建设有限公司 |CNY</x:String>
+          <x:String>325605000018010537364 |腾飞科技园发展(苏州工业园区)有限公司 |CNY</x:String>
+          <x:String>332006302013000009985 |凯德管理(上海)有限公司宁波分公司 |CNY</x:String>
+          <x:String>332006302018010130572 |中新创智(宁波)产业园发展有限公司 |CNY</x:String>
+          <x:String>332006302018010130724 |宁波创园科技发展有限公司 |CNY</x:String>
+          <x:String>441162518018010070302 |广州云凯置业有限公司 |CNY</x:String>
+          <x:String>441164670013000021415 |上海碧峰房地产发展有限公司 |CNY</x:String>
+          <x:String>441164670018800101849 |广州凯耀置业有限公司 |CNY</x:String>
+          <x:String>441164670018800107714 |凯德(成都)商用置业有限公司 |CNY</x:String>
+          <x:String>441164670018800107887 |成都华韵江南房地产开发有限公司 |CNY</x:String>
+          <x:String>441164670018800170057 |凯德商用房产管理咨询(上海)有限公司深圳分公司 |CNY</x:String>
+          <x:String>441164670018800182549 |大连凯锦商用设施经营管理有限公司 |CNY</x:String>
+          <x:String>441164670018800502071 |广州市凯荔置业有限公司 |CNY</x:String>
+          <x:String>441168410018010061419 |广州云凯置业有限公司 |CNY</x:String>
+        </scg:List>
+      </ui:SelectItem.Items>
+      <ui:SelectItem.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd371f96-126b-43b1-80a5-78d95c53372c" InformativeScreenshot="a071c4e076098c9747bd52869fcc405a" Selector="&lt;html title='交通银行企业网银' /&gt;&lt;webctrl id='accSelect' tag='SELECT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:SelectItem.Target>
+    </ui:SelectItem>
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SELECT  accSelect'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+      <ui:GetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="728729b6-09b8-43e1-bbeb-64a3749d1765" InformativeScreenshot="56219d7704e2acf260e9a5b45890312b" Selector="&lt;html title='交通银行企业网银' /&gt;&lt;webctrl id='accSelect' tag='SELECT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[out_SelectionText]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
+  </Sequence>
+</Activity>
